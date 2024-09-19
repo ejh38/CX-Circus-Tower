@@ -10,9 +10,8 @@
 class FileDataParser {
     public:
         FileDataParser(const std::string& filename);
-        std::vector<Person> parseDataWithRetries(int maxRetries = 3);
-    private:
         std::vector<Person> parseData();
+    private:
         std::string filename_;
 
 };

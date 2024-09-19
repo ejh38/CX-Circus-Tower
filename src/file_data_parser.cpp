@@ -20,7 +20,7 @@ std::vector<Person> FileDataParser::parseData() {
         std::istringstream iss(line);
         int height, weight;
 
-         // Make sure information was parsed successfully from file.
+        // Make sure information was parsed successfully from file.
         if (iss >> height >> weight) {
             people.emplace_back(height, weight);
         } else {
@@ -34,21 +34,4 @@ std::vector<Person> FileDataParser::parseData() {
     }
 
     return people;
-}
-
-// Allows a certain amount of flwxibility with incorrect input. 
-// Retry if a failure occurs like if a bad file name was provided.
-std::vector<Person> FileDataParser::parseDataWithRetries(int maxRetries) {
-    int retryCount = 0;
-    while (retryCount < maxRetries) {
-        try {
-            return parseData();
-        } catch (const std::runtime_error&) {
-            retryCount++;
-            if (retryCount < maxRetries) {
-                // Optionally log the retry attempt
-            }
-        }
-    }
-    throw std::runtime_error("Error: Failed to read data after " + std::to_string(maxRetries) + " attempts.");
 }

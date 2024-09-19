@@ -4,7 +4,7 @@
 #include <iostream>
 
 // Compare Person objects.
-// Returns true if a can be below b if b is shorter and lighter than b
+// Returns true if a can be below b if b is shorter and lighter than b.
 bool canPlaceBelow(const Person& a, const Person& b) {
     return a.getHeight() > b.getHeight() && a.getWeight() > b.getWeight();
 }
@@ -20,12 +20,12 @@ size_t TowerBuilder::maxTowerHeight() {
 
     std::vector<Person> tower;
 
-    // Iterate through each person to build the tower
+    // Iterate through each person to build the tower.
     for (const Person& person : sortedPeople) {
         if (!tower.empty() && 
             (tower.back().getHeight() == person.getHeight() || 
              tower.back().getWeight() == person.getWeight())) {
-            continue; // Skip this person if they are the same height or weight as another in order
+            continue; // Skip this person if they are the same height or weight as another in order.
         }
 
         // Add person to tower if possible
