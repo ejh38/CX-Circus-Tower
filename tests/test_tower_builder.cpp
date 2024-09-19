@@ -32,7 +32,7 @@ TEST(TowerBuilderTest, MaxHeightTestDiffWeightWithSameHeight) {
 TEST(TowerBuilderTest, MaxHeightTestDiffHeightWithSameWeight) {
     std::vector<Person> people = {
         Person(160, 50),
-        Person(164, 50),
+        Person(164, 50), // Same weight, cannot stack
         Person(174, 70),
         Person(180, 79),
         Person(181, 80),

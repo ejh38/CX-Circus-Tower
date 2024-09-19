@@ -15,7 +15,7 @@ TEST(FileDataParserTest, ValidFileParsing) {
     createTempFile("valid_data.txt", "180 75\n160 60\n170 65\n182 75\n162 60\n176 65\n187 75\n166 60\n171 65\n");
     FileDataParser parser("valid_data.txt");
     std::vector<Person> people = parser.parseData();
-    EXPECT_EQ(people.size(), 9); // Ensure that we have parsed three people
+    EXPECT_EQ(people.size(), 9); // Ensure that we have parsed 9 people
 }
 
 TEST(FileDataParserTest, InvalidFile) {
